@@ -1,7 +1,9 @@
 
-public class Slot_machine {
+public class Game {
 
-	public int main(float balance, double bets) {
+	public int main(float balance) throws ClassNotFoundException {
+		double bets = 0.1;
+		int spins = 1;
 		double bal = balance*100;
 		int money = (int)bal;
 		double x = bets * 100;
@@ -10,8 +12,11 @@ public class Slot_machine {
 		Slot game = new Slot();
 		
 		int i = 0;
-		while(money >= bet) {
+		while(i < spins) {
 			i++;
+			if (money < bet) {
+				System.out.println("Money"+money);
+			}
 			System.out.println("Money before bet: "+(float)money/100);
 			System.out.println("Bet: "+(float)bet/100);
 			money = money - bet;
